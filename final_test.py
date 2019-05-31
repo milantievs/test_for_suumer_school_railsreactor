@@ -3,6 +3,7 @@ import os
 import numpy as np
 from PIL import Image, ImageFilter
 
+
 def make_hash(name1):
     img1 = np.array(np.asarray(Image.open(f'{name1}').resize((32, 32), Image.ANTIALIAS).convert('L')), dtype=np.double)
     dct_matrix = np.zeros((32, 32))
@@ -30,16 +31,10 @@ def hamm(a, b):
 
 def pHash(path='./dev_dataset'):
     list_of_images = os.listdir(path)
-    k = len(list_of_images)
-    res = np.zeros((k, k))
     hash_of_images = []
 
     for i in list_of_images:
         hash_of_images.append(make_hash(path + '/' + i))
-
-    for i in range(k):
-        for j in range(i + 1, k):
-            res[i][j] = hamm(hash_of_images[i], hash_of_images[j])
 
     return hash_of_images
 
