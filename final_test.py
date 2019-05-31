@@ -3,7 +3,7 @@ import os
 import numpy as np
 from PIL import Image, ImageFilter
 
-def main_p(name1):
+def make_hash(name1):
     img1 = np.array(np.asarray(Image.open(f'{name1}').resize((32, 32), Image.ANTIALIAS).convert('L')), dtype=np.double)
     dct_matrix = np.zeros((32, 32))
     for i in range(32):
@@ -35,7 +35,7 @@ def pHash(path='./dev_dataset'):
     hash_of_images = []
 
     for i in list_of_images:
-        hash_of_images.append(main_p(path + '/' + i))
+        hash_of_images.append(make_hash(path + '/' + i))
 
     for i in range(k):
         for j in range(i + 1, k):
