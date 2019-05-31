@@ -1,2 +1,7 @@
-# test_for_suumer_school_railsreactor
-test task for railsreactor
+# Тестовое задание для летней школы Rails Reactor
+выполнил: Милантьев Сергей
+
+### Найти все дубликаты,модифицированные и похожие изображение в указанной папке
+
+решение: final_test.py
+исследование: research.ipynb
